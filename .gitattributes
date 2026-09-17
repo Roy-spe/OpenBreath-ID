@@ -1,0 +1,2 @@
+# Preserve the audited release bytes on every platform for SHA-256 verification.
+* -text

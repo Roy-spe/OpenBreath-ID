@@ -1,0 +1,314 @@
+% Generated from saved duration CSV; presentation-only change.
+% 18 schedule positions map to 15 unique conditions; duplicates are not independent evidence.
+\documentclass[tikz,border=0pt]{standalone}
+\usepackage{iftex}
+\ifXeTeX
+  \usepackage{newtxtext}
+\else
+  \renewcommand{\rmdefault}{ptm}
+\fi
+\definecolor{ink}{HTML}{18212B}
+\definecolor{muted}{HTML}{55616E}
+\definecolor{axisgray}{HTML}{76818C}
+\definecolor{gridgray}{HTML}{E0E5EB}
+\definecolor{bluecolor}{HTML}{0072B2}
+\definecolor{orangecolor}{HTML}{D55E00}
+\definecolor{greencolor}{HTML}{00805A}
+\definecolor{heatblue}{HTML}{2166AC}
+\definecolor{heatorange}{HTML}{B35806}
+\definecolor{badgefill}{HTML}{E8F2FB}
+\tikzset{
+ textbase/.style={anchor=base,font=\fontsize{9.24bp}{11bp}\selectfont,text=ink},
+ heading/.style={textbase,anchor=base west,font=\fontsize{10.08bp}{12bp}\selectfont\bfseries},
+ badge/.style={heading,anchor=base,text=bluecolor},
+ note/.style={textbase,text=muted},
+ axis/.style={draw=axisgray,line width=0.448bp},
+ grid/.style={draw=gridgray,line width=0.336bp},
+ blue/.style={draw=bluecolor,line width=1.12bp},
+ orange/.style={draw=orangecolor,line width=1.12bp,dash pattern=on 3.92bp off 2.24bp},
+ green/.style={draw=greencolor,line width=1.12bp,dash pattern=on 1.12bp off 1.68bp},
+ bluepoint/.style={draw=bluecolor,line width=0.896bp,fill=white},
+ orangepoint/.style={draw=orangecolor,line width=0.896bp,fill=white},
+ greenpoint/.style={draw=greencolor,line width=0.896bp,fill=white},
+ primary/.style={draw=ink,line width=1.12bp}
+}
+\begin{document}
+\begin{tikzpicture}[x=0.28bp,y=-0.28bp,every node/.style={inner sep=0pt,outer sep=0pt}]
+\path[use as bounding box] (0,0) rectangle (1800,620);
+\clip (0,0) rectangle (1800,620);
+\fill[white] (0,0) rectangle (1800,620);
+% y-range=30,42; x-range=30,300; linear axes
+% Heatmap: delta=stacked-bie; symmetric color limits=-2.1,+2.1; categorical duration columns
+\fill[badgefill,rounded corners=2.24bp] (76,14) rectangle (119,57);
+\node[badge] at (97.5,47) {A};
+\node[heading] at (133,47) {BIE duration trends};
+\fill[badgefill,rounded corners=2.24bp] (804,14) rectangle (847,57);
+\node[badge] at (825.5,47) {B};
+\node[heading] at (862,47) {EER reduction vs. stacked CNN};
+\node[note] at (400,93) {Enrollment / probe schedules};
+\node[note] at (1372,93) {Varied duration \textit{d} (s)};
+\node[textbase,rotate=90] at (35,278) {BIE EER (\%)};
+\draw[axis] (100,130) -- (100,420) -- (710,420);
+\node[textbase,anchor=base east] at (84,430.000) {30};
+\draw[grid] (100,323.333) -- (710,323.333);
+\node[textbase,anchor=base east] at (84,333.333) {34};
+\draw[grid] (100,226.667) -- (710,226.667);
+\node[textbase,anchor=base east] at (84,236.667) {38};
+\draw[grid] (100,130.000) -- (710,130.000);
+\node[textbase,anchor=base east] at (84,140.000) {42};
+\draw[axis] (120.000,420) -- (120.000,427);
+\node[textbase] at (120.000,458) {30};
+\draw[axis] (183.111,420) -- (183.111,427);
+\node[textbase] at (183.111,458) {60};
+\draw[axis] (309.333,420) -- (309.333,427);
+\node[textbase] at (309.333,458) {120};
+\draw[axis] (435.556,420) -- (435.556,427);
+\node[textbase] at (435.556,458) {180};
+\draw[axis] (561.778,420) -- (561.778,427);
+\node[textbase] at (561.778,458) {240};
+\draw[axis] (688.000,420) -- (688.000,427);
+\node[textbase] at (688.000,458) {300};
+\node[textbase] at (400,500) {Varied duration \textit{d} (s)};
+\draw[blue] (120.000,278.730) -- (183.111,305.596) -- (309.333,328.283) -- (435.556,341.696) -- (561.778,349.018) -- (688.000,354.872);
+% point fixed_enroll wake_wake_e300_p30_g30_nested300 30 35.845654646
+\draw[bluepoint] (112.000,270.730) rectangle (128.000,286.730);
+% point fixed_enroll wake_wake_e300_p60_g30_nested300 60 34.733974984
+\draw[bluepoint] (175.111,297.596) rectangle (191.111,313.596);
+% point fixed_enroll wake_wake_e300_p120_g30_nested300 120 33.795175439
+\draw[bluepoint] (301.333,320.283) rectangle (317.333,336.283);
+% point fixed_enroll wake_wake_e300_p180_g30_nested300 180 33.240172190
+\draw[bluepoint] (427.556,333.696) rectangle (443.556,349.696);
+% point fixed_enroll wake_wake_e300_p240_g30_nested300 240 32.937191358
+\draw[bluepoint] (553.778,341.018) rectangle (569.778,357.018);
+% point fixed_enroll wake_wake_e300_p300_g30_nested300 300 32.694931774
+\draw[bluepoint] (680.000,346.872) rectangle (696.000,362.872);
+\draw[blue] (142,530) -- (203,530);
+\draw[bluepoint] (164.000,522.000) rectangle (180.000,538.000);
+\node[textbase,anchor=base west] at (226,540) {300 / \textit{d}: fixed enrollment};
+\node[textbase,anchor=base east] at (971,202) {300 / \textit{d}};
+\node[textbase] at (1062,132) {30};
+% cell fixed_enroll wake_wake_e300_p30_g30_nested300 30 +1.025341131 primary=true
+\fill[heatblue!48.8258!white] (1000,151) rectangle (1124,235);
+\draw[white,line width=0.56bp] (1000,151) rectangle (1124,235);
+\node[textbase,text=ink] at (1062,203) {+1.03};
+\draw[primary] (1004,155) rectangle (1120,231);
+\node[textbase] at (1186,132) {60};
+% cell fixed_enroll wake_wake_e300_p60_g30_nested300 60 +1.448432424 primary=true
+\fill[heatblue!68.9730!white] (1124,151) rectangle (1248,235);
+\draw[white,line width=0.56bp] (1124,151) rectangle (1248,235);
+\node[textbase,text=white] at (1186,203) {+1.45};
+\draw[primary] (1128,155) rectangle (1244,231);
+\node[textbase] at (1310,132) {120};
+% cell fixed_enroll wake_wake_e300_p120_g30_nested300 120 +1.695354126 primary=false
+\fill[heatblue!80.7311!white] (1248,151) rectangle (1372,235);
+\draw[white,line width=0.56bp] (1248,151) rectangle (1372,235);
+\node[textbase,text=white] at (1310,203) {+1.70};
+\node[textbase] at (1434,132) {180};
+% cell fixed_enroll wake_wake_e300_p180_g30_nested300 180 +1.903500650 primary=false
+\fill[heatblue!90.6429!white] (1372,151) rectangle (1496,235);
+\draw[white,line width=0.56bp] (1372,151) rectangle (1496,235);
+\node[textbase,text=white] at (1434,203) {+1.90};
+\node[textbase] at (1558,132) {240};
+% cell fixed_enroll wake_wake_e300_p240_g30_nested300 240 +1.957919103 primary=false
+\fill[heatblue!93.2342!white] (1496,151) rectangle (1620,235);
+\draw[white,line width=0.56bp] (1496,151) rectangle (1620,235);
+\node[textbase,text=white] at (1558,203) {+1.96};
+\node[textbase] at (1682,132) {300};
+% cell fixed_enroll wake_wake_e300_p300_g30_nested300 300 +1.991439246 primary=false
+\fill[heatblue!94.8304!white] (1620,151) rectangle (1744,235);
+\draw[white,line width=0.56bp] (1620,151) rectangle (1744,235);
+\node[textbase,text=white] at (1682,203) {+1.99};
+\draw[orange] (120.000,187.672) -- (183.111,219.073) -- (309.333,250.148) -- (435.556,270.345) -- (561.778,291.890) -- (688.000,305.596);
+% point fixed_probe wake_wake_e30_p60_g30_nested300 30 39.613564003
+\draw[orangepoint] (120.000,187.672) circle[radius=8];
+% point fixed_probe wake_wake_e60_p60_g30_nested300 60 38.314205653
+\draw[orangepoint] (183.111,219.073) circle[radius=8];
+% point fixed_probe wake_wake_e120_p60_g30_nested300 120 37.028338207
+\draw[orangepoint] (309.333,250.148) circle[radius=8];
+% point fixed_probe wake_wake_e180_p60_g30_nested300 180 36.192625081
+\draw[orangepoint] (435.556,270.345) circle[radius=8];
+% point fixed_probe wake_wake_e240_p60_g30_nested300 240 35.301096491
+\draw[orangepoint] (561.778,291.890) circle[radius=8];
+% point fixed_probe wake_wake_e300_p60_g30_nested300 300 34.733974984
+\draw[orangepoint] (688.000,305.596) circle[radius=8];
+\draw[orange] (142,563) -- (203,563);
+\draw[orangepoint] (172.000,563.000) circle[radius=8];
+\node[textbase,anchor=base west] at (226,573) {\textit{d} / 60: fixed probe};
+\node[textbase,anchor=base east] at (971,286) {\textit{d} / 60};
+% cell fixed_probe wake_wake_e30_p60_g30_nested300 30 +0.119809942 primary=false
+\fill[heatblue!5.7052!white] (1000,235) rectangle (1124,319);
+\draw[white,line width=0.56bp] (1000,235) rectangle (1124,319);
+\node[textbase,text=ink] at (1062,287) {+0.12};
+% cell fixed_probe wake_wake_e60_p60_g30_nested300 60 +0.803565627 primary=false
+\fill[heatblue!38.2650!white] (1124,235) rectangle (1248,319);
+\draw[white,line width=0.56bp] (1124,235) rectangle (1248,319);
+\node[textbase,text=ink] at (1186,287) {+0.80};
+% cell fixed_probe wake_wake_e120_p60_g30_nested300 120 +0.906936322 primary=false
+\fill[heatblue!43.1874!white] (1248,235) rectangle (1372,319);
+\draw[white,line width=0.56bp] (1248,235) rectangle (1372,319);
+\node[textbase,text=ink] at (1310,287) {+0.91};
+% cell fixed_probe wake_wake_e180_p60_g30_nested300 180 +0.976868096 primary=false
+\fill[heatblue!46.5175!white] (1372,235) rectangle (1496,319);
+\draw[white,line width=0.56bp] (1372,235) rectangle (1496,319);
+\node[textbase,text=ink] at (1434,287) {+0.98};
+% cell fixed_probe wake_wake_e240_p60_g30_nested300 240 +1.337654321 primary=false
+\fill[heatblue!63.6978!white] (1496,235) rectangle (1620,319);
+\draw[white,line width=0.56bp] (1496,235) rectangle (1620,319);
+\node[textbase,text=white] at (1558,287) {+1.34};
+% cell fixed_probe wake_wake_e300_p60_g30_nested300 300 +1.448432424 primary=false
+\fill[heatblue!68.9730!white] (1620,235) rectangle (1744,319);
+\draw[white,line width=0.56bp] (1620,235) rectangle (1744,319);
+\node[textbase,text=white] at (1682,287) {+1.45};
+\draw[green] (120.000,169.749) -- (183.111,219.073) -- (309.333,266.707) -- (435.556,303.845) -- (561.778,336.869) -- (688.000,354.872);
+% point matched wake_wake_e30_p30_g30_nested300 30 40.355222547
+\draw[greenpoint] (120.000,159.749) -- (111.000,176.749) -- (129.000,176.749) -- cycle;
+% point matched wake_wake_e60_p60_g30_nested300 60 38.314205653
+\draw[greenpoint] (183.111,209.073) -- (174.111,226.073) -- (192.111,226.073) -- cycle;
+% point matched wake_wake_e120_p120_g30_nested300 120 36.343161144
+\draw[greenpoint] (309.333,256.707) -- (300.333,273.707) -- (318.333,273.707) -- cycle;
+% point matched wake_wake_e180_p180_g30_nested300 180 34.806408382
+\draw[greenpoint] (435.556,293.845) -- (426.556,310.845) -- (444.556,310.845) -- cycle;
+% point matched wake_wake_e240_p240_g30_nested300 240 33.439920403
+\draw[greenpoint] (561.778,326.869) -- (552.778,343.869) -- (570.778,343.869) -- cycle;
+% point matched wake_wake_e300_p300_g30_nested300 300 32.694931774
+\draw[greenpoint] (688.000,344.872) -- (679.000,361.872) -- (697.000,361.872) -- cycle;
+\draw[green] (142,596) -- (203,596);
+\draw[greenpoint] (172.000,586.000) -- (163.000,603.000) -- (181.000,603.000) -- cycle;
+\node[textbase,anchor=base west] at (226,606) {\textit{d} / \textit{d}: matched durations};
+\node[textbase,anchor=base east] at (971,370) {\textit{d} / \textit{d}};
+% cell matched wake_wake_e30_p30_g30_nested300 30 -0.097441520 primary=false
+\fill[heatorange!4.6401!white] (1000,319) rectangle (1124,403);
+\draw[white,line width=0.56bp] (1000,319) rectangle (1124,403);
+\node[textbase,text=ink] at (1062,371) {-0.10};
+% cell matched wake_wake_e60_p60_g30_nested300 60 +0.803565627 primary=false
+\fill[heatblue!38.2650!white] (1124,319) rectangle (1248,403);
+\draw[white,line width=0.56bp] (1124,319) rectangle (1248,403);
+\node[textbase,text=ink] at (1186,371) {+0.80};
+% cell matched wake_wake_e120_p120_g30_nested300 120 +1.002347303 primary=false
+\fill[heatblue!47.7308!white] (1248,319) rectangle (1372,403);
+\draw[white,line width=0.56bp] (1248,319) rectangle (1372,403);
+\node[textbase,text=ink] at (1310,371) {+1.00};
+% cell matched wake_wake_e180_p180_g30_nested300 180 +1.479483431 primary=false
+\fill[heatblue!70.4516!white] (1372,319) rectangle (1496,403);
+\draw[white,line width=0.56bp] (1372,319) rectangle (1496,403);
+\node[textbase,text=white] at (1434,371) {+1.48};
+% cell matched wake_wake_e240_p240_g30_nested300 240 +2.039416829 primary=false
+\fill[heatblue!97.1151!white] (1496,319) rectangle (1620,403);
+\draw[white,line width=0.56bp] (1496,319) rectangle (1620,403);
+\node[textbase,text=white] at (1558,371) {+2.04};
+% cell matched wake_wake_e300_p300_g30_nested300 300 +1.991439246 primary=false
+\fill[heatblue!94.8304!white] (1620,319) rectangle (1744,403);
+\draw[white,line width=0.56bp] (1620,319) rectangle (1744,403);
+\node[textbase,text=white] at (1682,371) {+1.99};
+\node[textbase] at (1372,449) {Stacked CNN minus BIE (pp)};
+\fill[heatorange!99.0000!white] (1095.000,470) rectangle (1100.560,493);
+\fill[heatorange!97.0000!white] (1100.540,470) rectangle (1106.100,493);
+\fill[heatorange!95.0000!white] (1106.080,470) rectangle (1111.640,493);
+\fill[heatorange!93.0000!white] (1111.620,470) rectangle (1117.180,493);
+\fill[heatorange!91.0000!white] (1117.160,470) rectangle (1122.720,493);
+\fill[heatorange!89.0000!white] (1122.700,470) rectangle (1128.260,493);
+\fill[heatorange!87.0000!white] (1128.240,470) rectangle (1133.800,493);
+\fill[heatorange!85.0000!white] (1133.780,470) rectangle (1139.340,493);
+\fill[heatorange!83.0000!white] (1139.320,470) rectangle (1144.880,493);
+\fill[heatorange!81.0000!white] (1144.860,470) rectangle (1150.420,493);
+\fill[heatorange!79.0000!white] (1150.400,470) rectangle (1155.960,493);
+\fill[heatorange!77.0000!white] (1155.940,470) rectangle (1161.500,493);
+\fill[heatorange!75.0000!white] (1161.480,470) rectangle (1167.040,493);
+\fill[heatorange!73.0000!white] (1167.020,470) rectangle (1172.580,493);
+\fill[heatorange!71.0000!white] (1172.560,470) rectangle (1178.120,493);
+\fill[heatorange!69.0000!white] (1178.100,470) rectangle (1183.660,493);
+\fill[heatorange!67.0000!white] (1183.640,470) rectangle (1189.200,493);
+\fill[heatorange!65.0000!white] (1189.180,470) rectangle (1194.740,493);
+\fill[heatorange!63.0000!white] (1194.720,470) rectangle (1200.280,493);
+\fill[heatorange!61.0000!white] (1200.260,470) rectangle (1205.820,493);
+\fill[heatorange!59.0000!white] (1205.800,470) rectangle (1211.360,493);
+\fill[heatorange!57.0000!white] (1211.340,470) rectangle (1216.900,493);
+\fill[heatorange!55.0000!white] (1216.880,470) rectangle (1222.440,493);
+\fill[heatorange!53.0000!white] (1222.420,470) rectangle (1227.980,493);
+\fill[heatorange!51.0000!white] (1227.960,470) rectangle (1233.520,493);
+\fill[heatorange!49.0000!white] (1233.500,470) rectangle (1239.060,493);
+\fill[heatorange!47.0000!white] (1239.040,470) rectangle (1244.600,493);
+\fill[heatorange!45.0000!white] (1244.580,470) rectangle (1250.140,493);
+\fill[heatorange!43.0000!white] (1250.120,470) rectangle (1255.680,493);
+\fill[heatorange!41.0000!white] (1255.660,470) rectangle (1261.220,493);
+\fill[heatorange!39.0000!white] (1261.200,470) rectangle (1266.760,493);
+\fill[heatorange!37.0000!white] (1266.740,470) rectangle (1272.300,493);
+\fill[heatorange!35.0000!white] (1272.280,470) rectangle (1277.840,493);
+\fill[heatorange!33.0000!white] (1277.820,470) rectangle (1283.380,493);
+\fill[heatorange!31.0000!white] (1283.360,470) rectangle (1288.920,493);
+\fill[heatorange!29.0000!white] (1288.900,470) rectangle (1294.460,493);
+\fill[heatorange!27.0000!white] (1294.440,470) rectangle (1300.000,493);
+\fill[heatorange!25.0000!white] (1299.980,470) rectangle (1305.540,493);
+\fill[heatorange!23.0000!white] (1305.520,470) rectangle (1311.080,493);
+\fill[heatorange!21.0000!white] (1311.060,470) rectangle (1316.620,493);
+\fill[heatorange!19.0000!white] (1316.600,470) rectangle (1322.160,493);
+\fill[heatorange!17.0000!white] (1322.140,470) rectangle (1327.700,493);
+\fill[heatorange!15.0000!white] (1327.680,470) rectangle (1333.240,493);
+\fill[heatorange!13.0000!white] (1333.220,470) rectangle (1338.780,493);
+\fill[heatorange!11.0000!white] (1338.760,470) rectangle (1344.320,493);
+\fill[heatorange!9.0000!white] (1344.300,470) rectangle (1349.860,493);
+\fill[heatorange!7.0000!white] (1349.840,470) rectangle (1355.400,493);
+\fill[heatorange!5.0000!white] (1355.380,470) rectangle (1360.940,493);
+\fill[heatorange!3.0000!white] (1360.920,470) rectangle (1366.480,493);
+\fill[heatorange!1.0000!white] (1366.460,470) rectangle (1372.020,493);
+\fill[heatblue!1.0000!white] (1372.000,470) rectangle (1377.560,493);
+\fill[heatblue!3.0000!white] (1377.540,470) rectangle (1383.100,493);
+\fill[heatblue!5.0000!white] (1383.080,470) rectangle (1388.640,493);
+\fill[heatblue!7.0000!white] (1388.620,470) rectangle (1394.180,493);
+\fill[heatblue!9.0000!white] (1394.160,470) rectangle (1399.720,493);
+\fill[heatblue!11.0000!white] (1399.700,470) rectangle (1405.260,493);
+\fill[heatblue!13.0000!white] (1405.240,470) rectangle (1410.800,493);
+\fill[heatblue!15.0000!white] (1410.780,470) rectangle (1416.340,493);
+\fill[heatblue!17.0000!white] (1416.320,470) rectangle (1421.880,493);
+\fill[heatblue!19.0000!white] (1421.860,470) rectangle (1427.420,493);
+\fill[heatblue!21.0000!white] (1427.400,470) rectangle (1432.960,493);
+\fill[heatblue!23.0000!white] (1432.940,470) rectangle (1438.500,493);
+\fill[heatblue!25.0000!white] (1438.480,470) rectangle (1444.040,493);
+\fill[heatblue!27.0000!white] (1444.020,470) rectangle (1449.580,493);
+\fill[heatblue!29.0000!white] (1449.560,470) rectangle (1455.120,493);
+\fill[heatblue!31.0000!white] (1455.100,470) rectangle (1460.660,493);
+\fill[heatblue!33.0000!white] (1460.640,470) rectangle (1466.200,493);
+\fill[heatblue!35.0000!white] (1466.180,470) rectangle (1471.740,493);
+\fill[heatblue!37.0000!white] (1471.720,470) rectangle (1477.280,493);
+\fill[heatblue!39.0000!white] (1477.260,470) rectangle (1482.820,493);
+\fill[heatblue!41.0000!white] (1482.800,470) rectangle (1488.360,493);
+\fill[heatblue!43.0000!white] (1488.340,470) rectangle (1493.900,493);
+\fill[heatblue!45.0000!white] (1493.880,470) rectangle (1499.440,493);
+\fill[heatblue!47.0000!white] (1499.420,470) rectangle (1504.980,493);
+\fill[heatblue!49.0000!white] (1504.960,470) rectangle (1510.520,493);
+\fill[heatblue!51.0000!white] (1510.500,470) rectangle (1516.060,493);
+\fill[heatblue!53.0000!white] (1516.040,470) rectangle (1521.600,493);
+\fill[heatblue!55.0000!white] (1521.580,470) rectangle (1527.140,493);
+\fill[heatblue!57.0000!white] (1527.120,470) rectangle (1532.680,493);
+\fill[heatblue!59.0000!white] (1532.660,470) rectangle (1538.220,493);
+\fill[heatblue!61.0000!white] (1538.200,470) rectangle (1543.760,493);
+\fill[heatblue!63.0000!white] (1543.740,470) rectangle (1549.300,493);
+\fill[heatblue!65.0000!white] (1549.280,470) rectangle (1554.840,493);
+\fill[heatblue!67.0000!white] (1554.820,470) rectangle (1560.380,493);
+\fill[heatblue!69.0000!white] (1560.360,470) rectangle (1565.920,493);
+\fill[heatblue!71.0000!white] (1565.900,470) rectangle (1571.460,493);
+\fill[heatblue!73.0000!white] (1571.440,470) rectangle (1577.000,493);
+\fill[heatblue!75.0000!white] (1576.980,470) rectangle (1582.540,493);
+\fill[heatblue!77.0000!white] (1582.520,470) rectangle (1588.080,493);
+\fill[heatblue!79.0000!white] (1588.060,470) rectangle (1593.620,493);
+\fill[heatblue!81.0000!white] (1593.600,470) rectangle (1599.160,493);
+\fill[heatblue!83.0000!white] (1599.140,470) rectangle (1604.700,493);
+\fill[heatblue!85.0000!white] (1604.680,470) rectangle (1610.240,493);
+\fill[heatblue!87.0000!white] (1610.220,470) rectangle (1615.780,493);
+\fill[heatblue!89.0000!white] (1615.760,470) rectangle (1621.320,493);
+\fill[heatblue!91.0000!white] (1621.300,470) rectangle (1626.860,493);
+\fill[heatblue!93.0000!white] (1626.840,470) rectangle (1632.400,493);
+\fill[heatblue!95.0000!white] (1632.380,470) rectangle (1637.940,493);
+\fill[heatblue!97.0000!white] (1637.920,470) rectangle (1643.480,493);
+\fill[heatblue!99.0000!white] (1643.460,470) rectangle (1649.020,493);
+\draw[axis] (1095,493) -- (1095,500);
+\node[textbase] at (1095,535) {-2.1};
+\draw[axis] (1372,493) -- (1372,500);
+\node[textbase] at (1372,535) {0};
+\draw[axis] (1649,493) -- (1649,500);
+\node[textbase] at (1649,535) {+2.1};
+\node[note] at (1372,570) {Positive favors BIE};
+\draw[primary] (951,581) rectangle (978,604);
+\node[note,anchor=base west] at (997,603) {Primary endpoints; other cells descriptive};
+\end{tikzpicture}
+\end{document}

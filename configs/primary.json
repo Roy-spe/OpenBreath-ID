@@ -1,0 +1,281 @@
+{
+  "configuration_version": "public-primary-1",
+  "development_identity_registry": {
+    "identities": 97,
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "split_seed": 2027,
+    "sha256": "CC0652D9C2DF0C5A1B9F2DAA41CECE482A03A739C9B66091613FBA4BD8D67585"
+  },
+  "data": {
+    "sampling_hz": 6,
+    "channels": 2,
+    "signal_variable": "fieldValue",
+    "session_scope": "primary",
+    "enrollment_state": "wake",
+    "probe_state": "wake"
+  },
+  "runs": {
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "training_seeds": [
+      2027,
+      2028,
+      2029
+    ]
+  },
+  "encoder_training": {
+    "epochs": 40,
+    "batches_per_epoch": 200,
+    "subjects_per_batch": 16,
+    "windows_per_subject": 4,
+    "maximum_training_windows_per_recording": 600,
+    "embedding_dimension": 256,
+    "stacked_base_channels": 72,
+    "stacked_branch_dimension": 64,
+    "bie_branch_dimension": 128,
+    "bie_base_channels": 40,
+    "loss": "ArcFace + 0.5 SupCon",
+    "arcface_scale": 30.0,
+    "arcface_margin": 0.3,
+    "contrastive_temperature": 0.07,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "normalization": "shared_robust",
+    "checkpoint_selection": "Within each fold and seed, minimize validation EER@60s + 0.5 * validation EER@30s using at most 30 validation probes per identity.",
+    "augmentation": "none"
+  },
+  "quality_training": {
+    "cache_batches": 100,
+    "subjects_per_batch": 16,
+    "windows_per_subject": 4,
+    "maximum_training_windows_per_recording": 600,
+    "quality_epochs": 20,
+    "quality_batch_size": 256,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "ranking_margin": 0.08,
+    "utility_loss_weight": 1.0,
+    "guard_minutes": 30,
+    "maximum_validation_probes_per_identity": 30,
+    "inference_batch_size": 512,
+    "encoder_update": "disabled",
+    "checkpoint_selection": "Within the same fold and seed, minimize validation quality-weighted EER@60s + 0.5 * EER@30s."
+  },
+  "duration_experiment": {
+    "durations_seconds": [
+      300,
+      240,
+      180,
+      120,
+      60,
+      30
+    ],
+    "encoder_segment_seconds": 30,
+    "duration_specific_retraining": false,
+    "enrollment_anchor_seconds": 300,
+    "probe_anchor_seconds": 300,
+    "guard_minutes": 30,
+    "maximum_probe_anchors_per_identity": 120
+  },
+  "conditions": [
+    {
+      "name": "wake_wake_e300_p300_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 300,
+      "probe_seconds": 300,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e300_p240_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 300,
+      "probe_seconds": 240,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e300_p180_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 300,
+      "probe_seconds": 180,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e300_p120_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 300,
+      "probe_seconds": 120,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e300_p60_g30_nested300",
+      "endpoint": "primary",
+      "enrollment_seconds": 300,
+      "probe_seconds": 60,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e300_p30_g30_nested300",
+      "endpoint": "primary",
+      "enrollment_seconds": 300,
+      "probe_seconds": 30,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e240_p60_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 240,
+      "probe_seconds": 60,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e180_p60_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 180,
+      "probe_seconds": 60,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e120_p60_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 120,
+      "probe_seconds": 60,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e60_p60_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 60,
+      "probe_seconds": 60,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e30_p60_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 30,
+      "probe_seconds": 60,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e240_p240_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 240,
+      "probe_seconds": 240,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e180_p180_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 180,
+      "probe_seconds": 180,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e120_p120_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 120,
+      "probe_seconds": 120,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    },
+    {
+      "name": "wake_wake_e30_p30_g30_nested300",
+      "endpoint": "descriptive",
+      "enrollment_seconds": 30,
+      "probe_seconds": 30,
+      "guard_minutes": 30,
+      "max_probes_per_subject": 120,
+      "enrollment_anchor_seconds": 300,
+      "probe_anchor_seconds": 300
+    }
+  ],
+  "evaluation": {
+    "primary_conditions": [
+      "wake_wake_e300_p60_g30_nested300",
+      "wake_wake_e300_p30_g30_nested300"
+    ],
+    "duration_specific_retraining": false,
+    "threshold_rule": "Fit operating thresholds separately inside each fold/seed validation role and apply unchanged to its paired test role.",
+    "seed_summary": "Report every seed and the arithmetic mean and standard deviation of metrics across the three seeds within each fold.",
+    "fold_summary": "Report the unweighted macro mean and standard deviation across the five fold means; never pool uncalibrated raw scores across folds.",
+    "pooling": "mean of normalized segment embeddings, then L2 normalization",
+    "scoring": "cosine similarity",
+    "metrics": [
+      "EER",
+      "normalized minDCF (target prior 0.01)",
+      "TAR and FAR at validation-targeted 1% FAR"
+    ]
+  },
+  "uncertainty": {
+    "method": "paired subject-weighted multiway (pigeonhole-style) percentile bootstrap",
+    "replicates": 10000,
+    "confidence_level": 0.95,
+    "bootstrap_seed": 2027,
+    "genuine_trial_weight": "w_i for genuine identity i",
+    "impostor_trial_weight": "w_i * w_j for enrollment identity i and probe identity j",
+    "paired_rule": "Use identical bootstrap multiplicities for every system, seed, duration, and paired comparison in a replicate.",
+    "fold_combination": "Recompute each seed/fold metric from weighted trials, average seeds within fold, then macro-average folds. Do not concatenate raw scores across folds.",
+    "interval": "95% percentile interval; retain replicate-level paired differences for system comparisons."
+  },
+  "comparisons": {
+    "primary": [
+      "bie_mean minus parameter_matched_stacked_mean",
+      "bie_quality_weighted minus bie_mean"
+    ],
+    "secondary": "all duration-curve contrasts and unilateral/channel-failure contrasts",
+    "multiplicity": "Apply Holm-Bonferroni to the family of predeclared primary comparisons; describe secondary analyses as exploratory."
+  }
+}

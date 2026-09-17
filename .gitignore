@@ -1,0 +1,30 @@
+.venv/
+.conda-env/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.egg-info/
+build/
+dist/
+tmp/
+.env
+.env.*
+*.pem
+*.key
+# Never commit study data, checkpoints or participant-level artifacts.
+*.mat
+*.npy
+*.npz
+*.pt
+*.pth
+*.pkl
+*.gz
+metadata/
+checkpoints/
+private/
+Original Dataset and Code/
+reports/
+subject_splits.csv
+*.aux
+*.log
+*.out
